@@ -113,5 +113,5 @@ export function srtf(processesInput) {
   ];
   
   const result = srtf(processes);
-  console.log(result);
+//   console.log(result);
   
