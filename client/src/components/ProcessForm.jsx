@@ -6,6 +6,7 @@ import { Plus, RefreshCw, Trash, Loader2, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import GanttChart from "./GanttChart";
 import AlgorithmSelector from "./AlgorithmSelector";
+import RealTimeSimulator from "./RealTimeSimulator";
 
 // Import your SchedulingContext hook
 import { useScheduling } from "../SchedulingContext";
@@ -36,6 +37,7 @@ const ProcessForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
+  const [showSimulator, setShowSimulator] = useState(false);
 
   // Update local newProcess id when processes change
   useEffect(() => {
@@ -122,6 +124,7 @@ const onRemoveProcess = (index) => {
 
     setIsLoading(true);
     setError(null);
+    setShowSimulator(false); // Hide simulator on new run
     try {
       const res = await axios.post("http://localhost:5000/api/schedule", {
         algorithm,
@@ -339,6 +342,25 @@ const onRemoveProcess = (index) => {
             ganttChart={result.ganttChart}
             processStats={result.processStats}
           />
+
+          {/* Show Run Real-Time Simulator button after results */}
+          <div className="flex justify-center mt-6">
+            <button
+              className="btn btn-primary bg-blue-600 text-white rounded-md px-4 py-2 hover:bg-blue-700"
+              onClick={() => setShowSimulator(true)}
+            >
+              Run Real-Time Simulator
+            </button>
+          </div>
+
+          {/* Show RealTimeSimulator only if user clicks the button */}
+          {showSimulator && (
+            <RealTimeSimulator
+              algorithm={algorithm}
+              processes={processes}
+              timeQuantum={timeQuantum}
+            />
+          )}
         </motion.div>
       )}
     </div>
