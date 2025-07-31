@@ -27,7 +27,7 @@ const Home = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="mb-16"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <Card
             title="Visualize Algorithms"
             description="See how different scheduling algorithms distribute CPU time among processes with animated Gantt charts and detailed metrics."
@@ -40,6 +40,13 @@ const Home = () => {
             description="Compare multiple scheduling algorithms side by side to understand their strengths, weaknesses, and optimal use cases."
             button_text="Compare Algorithms"
             path="/compare"
+            image={null}
+          />
+          <Card
+            title="Real-Time Simulator Engine"
+            description="Step through scheduling algorithms in real time, watch process states change, and interactively control the simulation engine."
+            button_text="Real-Time Simulator"
+            path="/realtime-simulator"
             image={null}
           />
         </div>
