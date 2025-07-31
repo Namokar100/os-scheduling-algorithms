@@ -45,6 +45,9 @@ const Navbar = () => {
             <li>
               <Link to="/compare">Compare</Link>
             </li>
+            <li>
+              <Link to="/realtime-simulator">Realtime Simulator Engine</Link>
+            </li>
           </ul>
         </div>
 
@@ -59,6 +62,9 @@ const Navbar = () => {
           <li>
             <Link to="/compare">Compare</Link>
           </li>
+          <li>
+              <Link to="/realtime-simulator">Realtime Simulator Engine</Link>
+            </li>
         </ul>
       </div>
     </div>

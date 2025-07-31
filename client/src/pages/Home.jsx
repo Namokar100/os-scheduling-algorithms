@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 const Home = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-10">
       {/* Hero Section */}
       <section className="text-center mb-12">
         <motion.div

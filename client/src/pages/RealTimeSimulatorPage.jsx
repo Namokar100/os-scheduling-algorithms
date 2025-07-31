@@ -40,7 +40,7 @@ const RealTimeSimulatorPage = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
+    <div className="max-w-8xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold mb-6 text-center text-white">Real-Time Simulator Engine</h1>
       {/* Algorithm Selector */}
       <AlgorithmSelector
